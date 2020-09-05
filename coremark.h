@@ -19,6 +19,8 @@ Original Author: Shay Gal-on
 /* Topic: Description
         This file contains  declarations of the various benchmark functions.
 */
+#ifndef _CORE_MARK_H_
+#define _CORE_MARK_H_
 
 /* Configuration: TOTAL_DATA_SIZE
         Define total size for data algorithms will operate on
@@ -51,6 +53,7 @@ void *iterate(void *pres);
         For machines that have floating point support, get number of seconds as
    a double. Otherwise an unsigned int.
 */
+#define HAS_FLOAT 1
 #if HAS_FLOAT
 typedef double secs_ret;
 #else
@@ -101,7 +104,6 @@ typedef struct list_head_s
 } list_head;
 
 /*matrix benchmark related stuff */
-#define MATDAT_INT 1
 #if MATDAT_INT
 typedef ee_s16 MATDAT;
 typedef ee_s32 MATRES;
@@ -181,3 +183,5 @@ ee_u32 core_init_matrix(ee_u32      blksize,
                         ee_s32      seed,
                         mat_params *p);
 ee_u16 core_bench_matrix(mat_params *p, ee_s16 seed, ee_u16 crc);
+
+#endif

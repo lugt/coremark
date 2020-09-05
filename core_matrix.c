@@ -44,9 +44,15 @@ void   matrix_mul_matrix_bitextract(ee_u32 N, MATRES *C, MATDAT *A, MATDAT *B);
 void   matrix_add_const(ee_u32 N, MATDAT *A, MATDAT val);
 
 #define matrix_test_next(x)      (x + 1)
-#define matrix_clip(x, y)        ((y) ? (x)&0x0ff : (x)&0x0ffff)
+#ifndef HAS_FLOAT
+#define matrix_clip(x, y)        ((y) ? (()x)&0x0ff : (x)&0x0ffff)
 #define matrix_big(x)            (0xf000 | (x))
 #define bit_extract(x, from, to) (((x) >> (from)) & (~(0xffffffff << (to))))
+#else
+#define matrix_clip(x, y)        (x)
+#define matrix_big(x)            (x)
+#define bit_extract(x, from, to) (x)
+#endif
 
 #if CORE_DEBUG
 void
@@ -352,7 +358,7 @@ matrix_mul_matrix_bitextract(ee_u32 N, MATRES *C, MATDAT *A, MATDAT *B)
             for (k = 0; k < N; k++)
             {
                 MATRES tmp = (MATRES)A[i * N + k] * (MATRES)B[k * N + j];
-                C[i * N + j] += bit_extract(tmp, 2, 4) * bit_extract(tmp, 5, 7);
+                // C[i * N + j] += bit_extract(tmp, 2, 4) * bit_extract(tmp, 5, 7);
             }
         }
     }

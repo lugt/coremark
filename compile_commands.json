@@ -1,0 +1,156 @@
+[
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DHAS_FLOAT=1",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "core_matrix.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "core_matrix.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "core_util.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "core_util.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "core_main.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "core_main.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "core_list_join.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "core_list_join.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "linux64/core_portme.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "linux64/core_portme.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-O2",
+            "-Ilinux64",
+            "-I.",
+            "-DFLAGS_STR=\"-O2   -lrt\"",
+            "-DITERATIONS=0",
+            "-o",
+            "./coremark.exe",
+            "core_state.c"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark",
+        "file": "core_state.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/ld",
+            "-plugin",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so",
+            "-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper",
+            "-plugin-opt=-fresolution=/tmp/ccsT10tr.res",
+            "-plugin-opt=-pass-through=-lgcc",
+            "-plugin-opt=-pass-through=-lgcc_s",
+            "-plugin-opt=-pass-through=-lc",
+            "-plugin-opt=-pass-through=-lgcc",
+            "-plugin-opt=-pass-through=-lgcc_s",
+            "--sysroot=/",
+            "--build-id",
+            "--eh-frame-hdr",
+            "-m",
+            "elf_x86_64",
+            "--hash-style=gnu",
+            "--as-needed",
+            "-dynamic-linker",
+            "/lib64/ld-linux-x86-64.so.2",
+            "-z",
+            "relro",
+            "-o",
+            "./coremark.exe",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o",
+            "-L/usr/lib/gcc/x86_64-linux-gnu/5",
+            "-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu",
+            "-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib",
+            "-L/lib/x86_64-linux-gnu",
+            "-L/lib/../lib",
+            "-L/usr/lib/x86_64-linux-gnu",
+            "-L/usr/lib/../lib",
+            "-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..",
+            "/tmp/ccl0SUAT.o",
+            "/tmp/ccXdTEBJ.o",
+            "/tmp/ccc36UjA.o",
+            "/tmp/ccZ3CTIr.o",
+            "/tmp/cc96V0Aj.o",
+            "/tmp/ccgJY6Pb.o",
+            "-lrt",
+            "-lgcc",
+            "--as-needed",
+            "-lgcc_s",
+            "--no-as-needed",
+            "-lc",
+            "-lgcc",
+            "--as-needed",
+            "-lgcc_s",
+            "--no-as-needed",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o",
+            "/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o"
+        ],
+        "directory": "/home/xc5/xc5/javascript/coremark"
+    }
+]
