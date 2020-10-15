@@ -1,4 +1,5 @@
 #include "coremark.h"
+int putchar();
 
 void
 matrix_mul_matrix(ee_u32 N, MATRES *C, MATDAT *A, MATDAT *B)
@@ -81,13 +82,18 @@ matrix_test(MATRES *C, MATDAT *A, MATDAT *B, MATDAT val)
   B = (MATDAT*) malloc(1024);
   C = (MATDAT*) malloc(1024);
   ee_u16 crc     = 0;
-  MATDAT clipval = matrix_big(val);
+  MATDAT clipval = val; // matrix_big(val);
 
   matrix_add_const(N, A, val); /* make sure data changes  */
   matrix_mul_matrix(N, C, A, B);
-  crc = crc16(matrix_sum(N, C, clipval), crc);
+  crc = 3; //crc16(matrix_sum(N, C, clipval), crc);
 
+  putchar('a' + C[1]);
   matrix_add_const(N, A, -val); /* return matrix to initial value */
   return crc;
 }
 
+
+int main() {
+    matrix_test(NULL, NULL, NULL, 20);
+}
